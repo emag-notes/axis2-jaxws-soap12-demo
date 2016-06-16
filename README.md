@@ -8,6 +8,14 @@
 
 ## Usage
 
+### Add tools.jar to CLASSPATH
+
+``` sh
+$ cp setenv.sh <YOUR_CATALINA_HOME>/bin
+```
+
+please change JAVA_HOME to your environment.
+
 ### Create server app and deploy to Tomcat
 
 ``` sh
