@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>axis2</groupId>
+    <artifactId>axis2-jaxws-soap12-demo-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>axis2-jaxws-soap12-demo-client</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jvnet.jax-ws-commons</groupId>
+        <artifactId>jaxws-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <configuration>
+              <wsdlDirectory>../server/target/generated-sources/wsdl/</wsdlDirectory>
+              <packageName>axis2.jaxws.soap12.client</packageName>
+              <keep>true</keep>
+              <vmArgs>
+                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+              </vmArgs>
+              <extension>true</extension>
+              <wsdlLocation>http://localhost:8080/axis2-jaxws-soap12-demo-server/services/HelloWorld</wsdlLocation>
+            </configuration>
+            <goals><goal>wsimport</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
