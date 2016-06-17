@@ -39,9 +39,21 @@
         <artifactId>jaxws-maven-plugin</artifactId>
         <executions>
           <execution>
+            <id>soap11</id>
             <configuration>
               <executable>${tool.wsgen}</executable>
-              <sei>axis2.jaxws.soap12.server.HelloWorld</sei>
+              <sei>axis2.jaxws.soap12.server.HelloWorldSoap11</sei>
+              <genWsdl>true</genWsdl>
+            </configuration>
+            <goals>
+              <goal>wsgen</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>soap12</id>
+            <configuration>
+              <executable>${tool.wsgen}</executable>
+              <sei>axis2.jaxws.soap12.server.HelloWorldSoap12</sei>
               <genWsdl>true</genWsdl>
               <extension>true</extension>
               <protocol>Xsoap1.2</protocol>

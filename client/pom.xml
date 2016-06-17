@@ -27,15 +27,32 @@
         <artifactId>jaxws-maven-plugin</artifactId>
         <executions>
           <execution>
+            <id>soap11</id>
             <configuration>
               <wsdlDirectory>../server/target/generated-sources/wsdl/</wsdlDirectory>
-              <packageName>axis2.jaxws.soap12.client</packageName>
+              <wsdlFiles>HelloWorldSoap11.wsdl</wsdlFiles>
+              <packageName>axis2.jaxws.soap12.client.soap11</packageName>
               <keep>true</keep>
               <vmArgs>
                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
               </vmArgs>
               <extension>true</extension>
-              <wsdlLocation>http://localhost:8080/axis2-jaxws-soap12-demo-server/services/HelloWorld</wsdlLocation>
+              <wsdlLocation>http://localhost:8080/axis2-jaxws-soap12-demo-server/services/HelloWorldSoap11?wsdl</wsdlLocation>
+            </configuration>
+            <goals><goal>wsimport</goal></goals>
+          </execution>
+          <execution>
+            <id>soap12</id>
+            <configuration>
+              <wsdlDirectory>../server/target/generated-sources/wsdl/</wsdlDirectory>
+              <wsdlFiles>HelloWorldSoap12.wsdl</wsdlFiles>
+              <packageName>axis2.jaxws.soap12.client.soap12</packageName>
+              <keep>true</keep>
+              <vmArgs>
+                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+              </vmArgs>
+              <extension>true</extension>
+              <wsdlLocation>http://localhost:8080/axis2-jaxws-soap12-demo-server/services/HelloWorldSoap12?wsdl</wsdlLocation>
             </configuration>
             <goals><goal>wsimport</goal></goals>
           </execution>

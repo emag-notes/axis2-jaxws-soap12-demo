@@ -6,13 +6,13 @@ import javax.jws.WebService;
 import javax.xml.ws.BindingType;
 import javax.xml.ws.soap.SOAPBinding;
 
-@WebService(serviceName = "HelloWorld")
+@WebService(serviceName = "HelloWorldSoap12")
 @BindingType(SOAPBinding.SOAP12HTTP_BINDING)
-public class HelloWorld {
+public class HelloWorldSoap12 {
 
     @WebMethod
     public String sayHello(@WebParam(name = "text") String text) {
-        return "Hello, " + text;
+        return "[SOAP12] Hello, " + text;
     }
 
 }
