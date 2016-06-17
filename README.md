@@ -33,7 +33,7 @@ And run tomcat with 8080 port.
 $ ./mvnw clean test -pl client -Dtest=axis2.jaxws.soap12.client.ClientTest#testSoap11
 ```
 
-it should works fine.
+it should work fine.
 
 #### SOAP 1.2
 
